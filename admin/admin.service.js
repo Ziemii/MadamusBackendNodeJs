@@ -11,8 +11,8 @@ async function authenticate({ login, password }) {
     const admin = await Admin.findOne({ login: login });
     if (!admin) throw "Login not found";
     const hash = admin.passwordHash;
-    var bcryptResult = false;
-    var token = '';
+    let bcryptResult = false;
+    let token = '';
 
     await bcrypt.compare(password, hash).then((result) => {
         if (result) {

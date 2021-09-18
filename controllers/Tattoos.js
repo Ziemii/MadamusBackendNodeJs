@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 //Create new tattoo
 router.post('/', imageHelper, async function (req, res) {
-  var imageUrl;
+  let imageUrl;
   await cloudinaryHelper.upload(req.file.path, //Cloudinary upload request 
   { public_id: req.body.title }, 
   function(error, result) {

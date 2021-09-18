@@ -16,7 +16,7 @@ const server = require('./server');
 //   passwordHash: '',
 // })
 
-// var credentials = [
+// let credentials = [
 //   {
 //     type: 'input',
 //     name: 'login',
@@ -33,7 +33,7 @@ const server = require('./server');
 
 // inquirer.prompt(credentials).then(answers => {
 //   admin.login = answers['login'];
-//   var password = answers['password'];
+//   let password = answers['password'];
   
 //   console.log(`Your admin credentials are:\nLogin: ${admin.login}\nPassword: ${password}`);
   

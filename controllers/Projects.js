@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 //Create new project
 router.post('/', imageHelper, async function (req, res) {
-  var imageUrl;
+  let imageUrl;
   await cloudinaryHelper.upload(req.file.path,
     { public_id: req.body.title }, 
     function(error, result) {
