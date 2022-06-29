@@ -4,11 +4,7 @@ const express = require('express');
 const server = express();
 const mongoose = require("mongoose");
 const jwt = require('./_helpers/jwt');
-// const multer = require('multer');
-// const GridFsStorage = require('multer-gridfs-storage');
-// const Grid = require('gridfs-stream');
 const cors = require('cors');
-// const Admin = require('./models/Admin');
 
 
 
@@ -18,9 +14,7 @@ const projects = require('./controllers/Projects');
 const tattoos = require('./controllers/Tattoos');
 const adminController = require('./admin/admin.controller');
 
-
 server.use('/Images', express.static('./Images'));
-
 
 //MIDDLEWARE
 server.use(cors());
@@ -33,7 +27,6 @@ server.use('/login', adminController);
 
 //JWT
 server.use(jwt());
-
 
 //ROUTES
 server.get('/', (req, res) => {
@@ -56,12 +49,5 @@ async function runServer() {
         console.log(`Server running at port ${process.env.PORT}`);
     });
 }
-
-// function saveAdmin(admin){
-
-
-
-// }
-
 
 exports.runServer = runServer();
